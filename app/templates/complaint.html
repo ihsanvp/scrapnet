@@ -1,0 +1,30 @@
+{% extends'indexrto.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="col">S.NO</th>
+      <th scope="col">USERNAME</th>
+      <th scope="col">COMPLAINT</th>
+      <th scope="col">DATE</th>
+      <th scope="col">REPLY</th>
+    </tr>
+   {% for i in data %}
+     <tr>
+      <td>{{  loop.index }}</td>
+      <td>&nbsp;{{ i['fname'] }} {{ i['lname'] }}</td>
+      <td>&nbsp;{{ i['complaint'] }}</td>
+      <td>&nbsp;{{ i['date'] }}</td>
+         {% if i['reply']=='pending' %}
+      <td><a href="reply?id={{ i['cid'] }}#about">REPLY</a></td>
+         {% else %}
+         <td>{{ i['reply'] }}</td>
+         {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

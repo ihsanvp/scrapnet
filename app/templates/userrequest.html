@@ -1,0 +1,34 @@
+{% extends 'scrapdealer_index.html'%}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1">
+    <tr>
+      <th scope="col">S.NO</th>
+      <th scope="col">USERNAME</th>
+      <th scope="col">VEHICLE DETAILS </th>
+      <th ></th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>&nbsp;{{  loop.index }}</td>
+      <td>&nbsp;{{ i['fname'] }}, {{ i['lname'] }}</td>
+      <td>&nbsp;{{ i['model']}}, <a href="static/rc/{{ i['rc'] }}">{{ i['rc'] }}</a>, <a href="static/fitness/{{ i['fitness'] }}">{{ i['fitness'] }}</a> </td>
+      <td>
+        {% if i['status']=='Forwarded'%}
+        Forwarded
+        {% elif i['status']=='Rejected'%}
+        Rejected
+         {% elif i['status']=='Accepted'%}
+        Accepted
+        {% else %}
+        <a href="forwardrq?id={{ i['rid'] }}">FORWARD</a> <br><a href="rjctrq?id={{ i['rid'] }}">REJECT</a>{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

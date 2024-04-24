@@ -1,0 +1,30 @@
+{% extends 'scrapdealer_index.html'%}
+{% block body %}
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+<body>
+<table width="200" border="1">
+  <tr>
+    <th scope="col">S.NO</th>
+    <th scope="col">USER</th>
+    <th scope="col">RATING</th>
+<!--    <th scope="col">REVIEW</th>-->
+  </tr>
+  {% for i in data %}
+    <tr>
+      <td>&nbsp;{{  loop.index }}</td>
+      <td>&nbsp;{{i['fname']}} {{i['lname']}}</td>
+      <td>&nbsp;{{i['rating']}}</td>
+<!--      <td>&nbsp;{{i['review']}}</td>-->
+    </tr>
+  {% endfor %}
+</table>
+</body>
+<!--</html>-->
+{% endblock %}

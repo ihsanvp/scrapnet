@@ -1,0 +1,22 @@
+{% extends 'indexrto.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/sendreply">
+  <table width="200" border="1" class="table table-striped">
+
+    <tr>
+      <th scope="row">REPLY</th>
+      <td><label>
+        <input type="text" name="MSG" />
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Submit" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

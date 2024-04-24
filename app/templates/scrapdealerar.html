@@ -1,0 +1,30 @@
+{% extends'indexrto.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="col">S.NO</th>
+      <th scope="col">DEALER NAME</th>
+      <th scope="col">ADDRESS</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">PHONE</th>
+      <th scope="col">PROOF</th>
+      <th scope="col">A/R</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>&nbsp;{{  loop.index }}</td>
+      <td>&nbsp;{{ i['sdname'] }}</td>
+      <td>&nbsp;{{ i['place']}}, {{i['post']}}, {{i['pin']}}</td>
+      <td>&nbsp;{{ i['email']}}</td>
+      <td>&nbsp;{{ i['phone']}}</td>
+       <td>&nbsp; <a href="static/proof/{{ i['proof'] }}">{{ i['proof'] }}</a></td>
+      <td><a href="acceptsd?id={{ i['id'] }}">ACCEPT</a> <br><a href="rejectsd?id={{ i['id'] }}">REJECT</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

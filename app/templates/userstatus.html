@@ -1,0 +1,24 @@
+{% extends 'userhome.html'%}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1">
+    <tr>
+      <th scope="col">S.NO</th>
+      <th scope="col">VEHICLE NAME</th>
+      <th scope="col">STATUS</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>&nbsp;{{  loop.index }}</td>
+      <td>&nbsp;{{i['model']}}</td>
+      <td>&nbsp;{{i['status']}}</td>
+    </tr>
+  {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

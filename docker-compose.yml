@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    links:
+      - db
+    ports:
+      - "5000:5000"
+  db:
+    image: mysql
+    ports:
+      - "32000:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_DATABASE=scrapenet
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro

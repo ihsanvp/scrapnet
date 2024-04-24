@@ -1,0 +1,25 @@
+{% extends 'userhome.html'%}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/snd_request">
+  <table  border="1" class="table table-striped">
+
+    <tr>
+      <th scope="row">VEHICLE </th>
+      <td>
+        <select name="select">
+          <option>SELECT</option>
+          {% for i in data %}
+          <option value="{{ i['vid'] }}">{{ i['model'] }}</option>
+          {% endfor %}
+        </select>
+      </td>
+    <tr>
+      <td colspan="2" align="center">
+        <input type="submit" name="Submit" value="Send" />
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

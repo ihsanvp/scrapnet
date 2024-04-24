@@ -1,0 +1,44 @@
+{% extends 'userhome.html'%}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/setrating">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th>
+        Scrapdealer
+      </th>
+      <td>
+        <select name="select">
+          <option>SELECT</option>
+          {% for i in data %}
+          <option value="{{ i['loginid'] }}">{{ i['sdname'] }}</option>
+          {% endfor %}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">RATING </th>
+      <td>
+        <select name="select1">
+          <option>SELECT</option>
+          <option>0.5</option>
+          <option>1.0</option>
+          <option>1.5</option>
+          <option>2.0</option>
+          <option>2.5</option>
+          <option>3.0</option>
+          <option>3.5</option>
+          <option>4.0</option>
+          <option>4.5</option>
+          <option>5.0</option>
+        </select>
+      </td>
+    <tr>
+      <td colspan="2" align="center">
+        <input type="submit" name="Submit" value="Send" />
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

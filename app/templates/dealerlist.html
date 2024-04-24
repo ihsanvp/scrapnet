@@ -1,0 +1,29 @@
+{% extends 'userhome.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="sendrequest">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="col">S.NO</th>
+      <th scope="col">DEALER NAME</th>
+      <th scope="col">ADDRESS</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">PHONE</th>
+      <TH></TH>
+<!--      <th scope="col">A/R</th>-->
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>&nbsp;{{  loop.index }}</td>
+      <td>&nbsp;{{ i['sdname'] }}</td>
+      <td>&nbsp;{{ i['place']}}, {{i['post']}}, {{i['pin']}}</td>
+      <td>&nbsp;{{ i['email']}}</td>
+      <td>&nbsp;{{ i['phone']}}</td>
+      <td> <a href="sendrequest?id={{ i['loginid'] }}#about">REQUEST</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'userhome.html'%}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/snd_complaint">
+  <table  border="1" class="table table-striped">
+    <tr>
+      <th>
+        Scrapdealer
+      </th>
+      <td>
+        <select name="select">
+          <option>SELECT</option>
+          {% for i in data %}
+          <option value="{{ i['loginid'] }}">{{ i['sdname'] }}</option>
+          {% endfor %}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">COMPLAINT </th>
+      <td>
+        <input type="text" name="textfield" />
+      </td>
+    <tr>
+      <td colspan="2" align="center">
+        <input type="submit" name="Submit" value="Send" />
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

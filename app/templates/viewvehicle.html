@@ -1,0 +1,31 @@
+{% extends 'userhome.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="addvehicle">
+  <table class="table table-striped">
+    <tr>
+      <th scope="col">S.NO</th>
+      <th scope="col">CAR MODEL</th>
+      <th scope="col">RC</th>
+      <th scope="col">FITNESS</th>
+      <th></th>
+    </tr>
+    {% for i in data %}
+    <tr>
+    <td>{{ loop.index }}</td>
+    <td>{{ i['model'] }}</td>
+    <td><a href="static/rc/{{ i['rc'] }}">{{ i['rc'] }}</a> </td>
+    <td><a href="static/fitness/{{ i['fitness'] }}">{{ i['fitness'] }}</a> </td>
+    <td><a class="btn btn-danger" href="/delete_vehicle?id={{ i['vid'] }}">DELETE</a> </td>
+    </tr>
+    {% endfor %}
+    <tr>
+       <td colspan="5" ALIGN="center">
+         <input class="btn btn-primary" type="submit" name="Add" value="Add">
+       </td>
+     </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'userhome.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="/predict">
+  <table class="table table-striped">
+
+    <tr>
+      <th scope="row">FILE</th>
+      <td>
+        <input class="form-control" type="file" name="file" />
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row">
+        <input type="submit" name="Submit" value="UPLOAD" />
+      </th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

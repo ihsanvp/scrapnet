@@ -1,0 +1,20 @@
+{% extends 'userhome.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/sendreply">
+  <table class="table table-striped">
+    <tr>
+      <th scope="row">Vehicle value</th>
+      {% if re==0 %}
+      <td>10% of orginal price</td>
+      {% elif re==1 %}
+      <td>30% of orginal price</td>
+      {% else %}
+      <td>50% of orginal price</td>
+      {% endif %}
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

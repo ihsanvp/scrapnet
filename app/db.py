@@ -2,7 +2,7 @@ import pymysql
 
 
 def iud(qry,val):
-    con=pymysql.connect(host='localhost',port=3306,user='root',password='',db='scrapnet')
+    con=pymysql.connect(host='db',port=3306,user='root',password='',db='scrapnet')
     cmd=con.cursor()
     cmd.execute(qry,val)
     id=cmd.lastrowid
@@ -12,7 +12,7 @@ def iud(qry,val):
     return id
 
 def selectone(qry,val):
-    con=pymysql.connect(host='localhost',port=3306,user='root',password='',db='scrapnet',cursorclass=pymysql.cursors.DictCursor)
+    con=pymysql.connect(host='db',port=3306,user='root',password='',db='scrapnet',cursorclass=pymysql.cursors.DictCursor)
     cmd=con.cursor()
     cmd.execute(qry,val)
     res=cmd.fetchone()
@@ -20,13 +20,13 @@ def selectone(qry,val):
     return res
 
 def selectall(qry):
-    con=pymysql.connect(host='localhost',port=3306,user='root',password='',db='scrapnet',cursorclass=pymysql.cursors.DictCursor)
+    con=pymysql.connect(host='db',port=3306,user='root',password='',db='scrapnet',cursorclass=pymysql.cursors.DictCursor)
     cmd=con.cursor()
     cmd.execute(qry)
     res=cmd.fetchall()
     return res
 def selectall2(qry,val):
-    con=pymysql.connect(host='localhost',port=3306,user='root',password='',db='scrapnet',cursorclass=pymysql.cursors.DictCursor)
+    con=pymysql.connect(host='db',port=3306,user='root',password='',db='scrapnet',cursorclass=pymysql.cursors.DictCursor)
     cmd=con.cursor()
     cmd.execute(qry,val)
     res=cmd.fetchall()

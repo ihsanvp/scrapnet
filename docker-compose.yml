@@ -10,7 +10,8 @@ services:
     ports:
       - "32000:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_DATABASE=scrapenet
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=scrapnet
+
     volumes:
       - ./db:/docker-entrypoint-initdb.d/:ro

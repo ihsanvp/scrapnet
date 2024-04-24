@@ -321,4 +321,4 @@ def predict():
     res=int(result)
     return render_template('result.html',re=res)
 
-app.run(debug=True)
+app.run(debug=True, host="0.0.0.0", port=5000)
